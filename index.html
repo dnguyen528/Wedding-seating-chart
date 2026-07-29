@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nancy & Victor Wedding Seating Chart</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f2eee8;
+  padding: 30px;
+}
+
+h1 {
+  color: #7a8b6f;
+}
+
+input {
+  padding: 12px;
+  width: 80%;
+  max-width: 350px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 12px 20px;
+  margin-top: 10px;
+  background: #7a8b6f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 22px;
+  font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Nancy & Victor's Wedding</h1>
+<h2>September 26, 2026</h2>
+
+<p>Enter your name to find your table</p>
+
+<input id="name" placeholder="Type your name">
+
+<br>
+
+<button onclick="findTable()">Find My Table</button>
+
+<div id="result"></div>
+
+
+<script>
+
+const guests = {
+  "Nancy Nguyen": "Table 4",
+  "Victor Tran": "Table 1",
+  "Emily Chen": "Table 8"
+};
+
+function findTable() {
+  let name = document.getElementById("name").value.trim();
+
+  if (guests[name]) {
+    document.getElementById("result").innerHTML =
+    name + "<br>" + guests[name];
+  } else {
+    document.getElementById("result").innerHTML =
+    "Name not found. Please check spelling.";
+  }
+}
+
+</script>
+
+</body>
+</html>
