@@ -81,11 +81,11 @@ const guests = {
 };
 
 function findTable() {
-  let name = document.getElementById("name").value.trim();
+  let name = document.getElementById("name").value.trim().toLowerCase();
 
   if (guests[name]) {
     document.getElementById("result").innerHTML =
-    name + "<br>" + guests[name];
+    document.getElementById("name").value + "<br>" + guests[name];
   } else {
     document.getElementById("result").innerHTML =
     "Name not found. Please check spelling.";
